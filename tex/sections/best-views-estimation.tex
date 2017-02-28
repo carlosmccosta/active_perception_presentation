@@ -1,0 +1,31 @@
+\section{\scshape Best views estimation}
+\subsection*{Best views estimation}
+\begin{frame}{Best views estimation}
+	\begin{itemize}
+		\item Given a set of observation positions
+		\begin{itemize}
+			\item If only one sensor is available
+			\begin{itemize}
+				\item Analyze all sensors data from each observation position
+				\item Apply a voxel grid space partition to avoid reduce variability of the estimated surface area observed by each sensor
+				\item Choose the sensor that can observe the most surface area of the objects
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Estimation of the best sensor configuration}
+	\begin{itemize}
+		\item Given a set of observation positions
+		\begin{itemize}
+			\item If several sensors area available (type and quantity adjustable)
+			\begin{itemize}
+				\item Extract point clouds for each observation point
+				\item Using a RANSAC approach, choose randomly a set a N sensors
+				\item Merge the sensor data and estimate the observable surface area
+				\item At the end of a given number of iterations or if the observable area reaches a given minimum, terminate the search, keeping the best sensor configuration found
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{frame}

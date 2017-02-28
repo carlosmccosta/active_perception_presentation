@@ -3,8 +3,8 @@
 \subsection{Context}
 \begin{frame}{Context}
 	\begin{itemize}
-		\item 3D object recognition is a challenging task that requires active perception of the environment
-		\item Simulating the possible static / dynamic configuration of sensors using a set of representative environments can help decide what types of sensors and how many should be used
+		\item 3D object recognition is a challenging task that may require active perception of the environment
+		\item Simulating sensor 3D depth data from a set of representative environments can help decide the type, number and disposition of sensors that maximize the observable target objects surface area within a given work area
 	\end{itemize}
 \end{frame}
 
@@ -12,15 +12,15 @@
 \subsection{Research Areas}
 \begin{frame}{Research Areas}
 	\begin{itemize}
-		\item Object recognition
+		\item 3D modeling and simulation of
+		\begin{itemize}
+			\item The 3D environment, including physics
+			\item The different types of depth sensors
+		\end{itemize}
+		\item 3D rendering with occlusions
 		\item Active perception
-		\item 3D simulation and modeling of the environment and sensors
-		\item 3D rendering
-	\end{itemize}
-	
-	\begin{itemize}
-		{\scriptsize \item Thorsten Gedicke, Martin Günther, Joachim Hertzberg, FLAP for CAOS: Forward-Looking Active Perception for Clutter-Aware Object Search1, IFAC-PapersOnLine, Volume 49, Issue 15, 2016, Pages 114-119, ISSN 2405-8963.}
-		{\scriptsize \item R. Saegusa, L. Natale, G. Metta and G. Sandini, "Cognitive robotics - active perception of the self and others," 2011 4th International Conference on Human System Interactions, HSI 2011, Yokohama, 2011, pp. 419-426.}
+		\item Object recognition
+		\item Bin picking
 	\end{itemize}
 \end{frame}
 
@@ -28,16 +28,25 @@
 \begin{frame}{Software dependencies}
 	\begin{itemize}
 		\item Robot Operating System (ROS)
+		\begin{itemize}
+			\item For fast integration between simulation and real robots and 3D visual inspection (Rviz)
+		\end{itemize}
 		\item Gazebo simulator
+		\begin{itemize}
+			\item For world / sensor simulation and 3D rendering
+		\end{itemize}
 		\item Point Cloud Library (PCL)
+		\begin{itemize}
+			\item For point cloud processing
+		\end{itemize}
 	\end{itemize}
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[height=.08\textheight]{ros-logo}
-		\hspace{0.5em}
-		\includegraphics[height=.08\textheight]{gazebo-logo}
-		\hspace{0.5em}
-		\includegraphics[height=.08\textheight]{pcl-logo}
-		\caption{Software dependencies logos}
+		\includegraphics[height=.08\textheight]{logos/ros-logo}
+		\hspace{1.5em}
+		\includegraphics[height=.08\textheight]{logos/gazebo-logo}
+		\hspace{1.5em}
+		\includegraphics[height=.08\textheight]{logos/pcl-logo}
+		\caption{Main software dependencies}
 	\end{figure}
 \end{frame}

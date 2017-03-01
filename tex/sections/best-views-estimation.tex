@@ -27,7 +27,7 @@
 			\end{itemize}
 			\item A voxel grid filtering algorithm is applied to perform a regular space partition in which the points centroid are computed for each voxel
 			\begin{itemize}
-				\item Critical for allowing consistent evaluation of the object(s) observed surface percentage, even when the sensors have different resolution and are at different distances from the target object(s)
+				\item Critical for allowing consistent evaluation of the object(s) observed surface area coverage percentage, even when the sensors have different resolution and are at different distances from the target object(s)
 			\end{itemize}
 		\end{itemize}
 	\end{itemize}
@@ -41,7 +41,7 @@
 		\vspace{0.5em}
 		\includegraphics[height=.32\textheight]{sensor-data-processing/rviz-sensor-view}\hspace{2em}
 		\includegraphics[height=.32\textheight]{sensor-data-processing/rviz-sensor-view-without-cad-with-model}
-		\caption{Color image rendered with the gazebo simulator (top image containing the scene and sensor) along with the generated point cloud for the target object taking into consideration the environment occlusions (bottom images, in which the green spheres are the observed points and the blue spheres are from the point cloud of the associated CAD model)}
+		\caption{Color image rendered with the Gazebo simulator (top image containing the scene and sensor) along with the generated point cloud for the target object taking into consideration the environment occlusions (bottom images, in which the green spheres are the observed points and the blue spheres are from the point cloud of the associated CAD model)}
 	\end{figure}
 \end{frame}
 
@@ -53,7 +53,7 @@
 		\begin{itemize}
 			\item The surface coverage percentage for each sensor is computed
 			\begin{itemize}
-				\item Given that both the reference point cloud and sensor data were filtered with a voxel grid with the same resolution and in the same coordinate system frame, calculating the surface coverage percentage can be efficiently computed by simply dividing the number of surface voxel points in the sensor data by the number of surface voxel points in the reference point cloud
+				\item Given that both the reference point cloud and the sensor data were filtered with a voxel grid with the same resolution and in the same coordinate system frame, calculating the surface coverage percentage can be efficiently computed by simply dividing the number of surface voxel points in the sensor data by the number of surface voxel points in the reference point cloud
 			\end{itemize}
 			\item The sensor that can observe the most surface area percentage of the target object(s) is chosen
 		\end{itemize}
@@ -70,8 +70,8 @@
 			\item The sensor data from the selected sensors is merged
 			\item The voxel grid filter algorithm is applied to ensure that there is only one point per voxel
 			\item The observable surface area percentage for the selected sensors is computed
-			\item If current subset of sensors achieved better observable surface area percentage than the current best, then it becomes the current best views estimation for the sensor disposition
-			\item At the end of a given number of iterations or if the observable surface area percentage reaches a given threshold, the search is terminated, returning the best sensor configuration found
+			\item If the current subset of sensors achieved better observable surface area percentage than the current best, then it becomes the current best views estimation for the sensor disposition
+			\item At the end of a given number of iterations or if the observable surface area percentage reaches a given threshold, the search is terminated, returning the best sensor disposition found
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -96,7 +96,7 @@
 		\includegraphics[height=.32\textwidth]{best-views-estimation/active-perception/3-sensors/rviz-front-right}\\
 		\includegraphics[height=.32\textwidth]{best-views-estimation/active-perception/3-sensors/rviz-back-left}\hspace{2em}
 		\includegraphics[height=.32\textwidth]{best-views-estimation/active-perception/3-sensors/rviz-top}
-		\caption{Estimation of the best 3 sensors disposition for the active perception environment with a 61.91\% of surface area coverage}
+		\caption{Estimation of the 3 best sensors disposition for the active perception environment with a 61.91\% of surface area coverage}
 	\end{figure}
 \end{frame}
 
@@ -120,7 +120,7 @@
 		\includegraphics[height=.3\textwidth]{best-views-estimation/bin-picking/5-sensors/rviz-top}\\
 		\includegraphics[height=.3\textwidth]{best-views-estimation/bin-picking/5-sensors/rviz-corner}\hspace{2em}
 		\includegraphics[height=.3\textwidth]{best-views-estimation/bin-picking/5-sensors/rviz-sensor-data}
-		\caption{Estimation of the best 5 sensors disposition for the bin picking environment with a 64.63\% of surface area coverage}
+		\caption{Estimation of the 5 best sensors disposition for the bin picking environment with a 64.63\% of surface area coverage}
 	\end{figure}
 \end{frame}
 
@@ -144,7 +144,7 @@
 		\includegraphics[height=.28\textwidth]{best-views-estimation/bin-picking-with-occlusions/3-sensors/rviz-front}\\
 		\includegraphics[height=.28\textwidth]{best-views-estimation/bin-picking-with-occlusions/3-sensors/rviz-top-back}\hspace{4em}
 		\includegraphics[height=.28\textwidth]{best-views-estimation/bin-picking-with-occlusions/3-sensors/rviz-top}
-		\caption{Estimation of the best 3 sensors disposition for the bin picking with occlusions environment with a 31.19\% of surface area coverage}
+		\caption{Estimation of the 3 best sensors disposition for the bin picking with occlusions environment with a 31.19\% of surface area coverage}
 	\end{figure}
 \end{frame}
 
@@ -156,6 +156,6 @@
 		\includegraphics[height=.28\textwidth]{best-views-estimation/multiple-bin-picking-with-occlusions/10-sensors/rviz-front-corner}\\
 		\includegraphics[height=.28\textwidth]{best-views-estimation/multiple-bin-picking-with-occlusions/10-sensors/rviz-front}\hspace{1.5em}
 		\includegraphics[height=.28\textwidth]{best-views-estimation/multiple-bin-picking-with-occlusions/10-sensors/rviz-top}
-		\caption{Estimation of the best 10 sensors disposition for the multiple bin picking with occlusions environment with a 43.93\% of surface area coverage}
+		\caption{Estimation of the 10 best sensors disposition for the multiple bin picking with occlusions environment with a 43.93\% of surface area coverage}
 	\end{figure}
 \end{frame}

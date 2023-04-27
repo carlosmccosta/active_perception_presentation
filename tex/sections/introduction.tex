@@ -1,52 +1,17 @@
 \section{\scshape Introduction}\label{sec:introduction}
 
-\subsection{Context}
 \begin{frame}{Context}
 	\begin{itemize}
-		\item 3D object recognition is a challenging task that may require active perception of the environment for gathering additional sensor information when the level of confidence in the perception analysis is not enough
-		\item Simulating sensor 3D depth data from a set of representative environments can help decide the type, number and disposition of sensors that maximize the target objects observable surface area
+		\item Perception of objects with large occlusions is a challenging task that can be tackled using active perception with a moving sensor or with a constellation of sensors.
+		\item The creation of a sensor constellation that maximizes the observable surface area of set of target objects is difficult to optimize when there are large occlusions of the objects and when creating a heterogeneous constellation with different types of sensors that have distinct technical characteristics.
 	\end{itemize}
 \end{frame}
 
 
-\subsection{Research Areas}
-\begin{frame}{Research Areas}
+\begin{frame}{Main contributions}
 	\begin{itemize}
-		\item 3D modeling and simulation of:
-		\begin{itemize}
-			\item The 3D environment, including physics
-			\item The different types of depth sensors
-		\end{itemize}
-		\item 3D rendering with occlusions
-		\item Active perception
-		\item Object recognition
-		\item Bin picking
+		\item Multisensor fusion approach that relies on color segmentation and voxel grid merging of point clouds that were generated in simulated worlds.
+		\item RANSAC algorithm for estimating the type, number and disposition of 3D sensors that maximize the target objects observable surface area.
+		\item Public release\footnote{\scriptsize\url{https://github.com/carlosmccosta/sensor_placement_optimization}} of source code and dataset with 4 simulation worlds developed for bin picking and active perception use cases with parts with large occlusions.
 	\end{itemize}
-\end{frame}
-
-\subsection{Software dependencies}
-\begin{frame}{Software dependencies}
-	\begin{itemize}
-		\item Robot Operating System (ROS)
-		\begin{itemize}
-			\item For fast integration between simulation and real robots and 3D visual inspection (Rviz)
-		\end{itemize}
-		\item Gazebo simulator
-		\begin{itemize}
-			\item For world / sensor simulation and 3D rendering
-		\end{itemize}
-		\item Point Cloud Library (PCL)
-		\begin{itemize}
-			\item For point cloud processing
-		\end{itemize}
-	\end{itemize}
-	\begin{figure}[!ht]
-		\centering
-		\includegraphics[height=.08\textheight]{logos/ros-logo}
-		\hspace{1.5em}
-		\includegraphics[height=.08\textheight]{logos/gazebo-logo}
-		\hspace{1.5em}
-		\includegraphics[height=.08\textheight]{logos/pcl-logo}
-		\caption{Main software dependencies}
-	\end{figure}
 \end{frame}

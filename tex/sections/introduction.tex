@@ -2,16 +2,22 @@
 
 \begin{frame}{Context}
 	\begin{itemize}
-		\item Perception of objects with large occlusions is a challenging task that can be tackled using active perception with a moving sensor or with a constellation of sensors.
-		\item The creation of a sensor constellation that maximizes the observable surface area of set of target objects is difficult to optimize when there are large occlusions of the objects and when creating a heterogeneous constellation with different types of sensors that have distinct technical characteristics.
+		\item Perception of objects is a challenging task, especially when they have large sensing occlusions, because they make ineffective the traditional approach of capturing data in several views uniformly generated in a semi-sphere around the target objects due to the fact that the occlusions may result in views that gather very little surface data from the target objects.
+		\item Moreover, the constellation of sensor views that maximizes the observable surface area of a set of target objects cannot be created by simply selecting the best N views, because they will likely have overlap in the surface areas that they observed from the target objects. As such, a smarter approach is required that takes into account the combined surface area coverage of the constellation.
+		\item To further complicate the problem, the constellation of views will likely need to have sensors with different characteristics, because we may want to mount on the robotic arm compact sensors with low resolution and short range and attach outside the robot large sensors with high resolution and long range.
 	\end{itemize}
 \end{frame}
 
 
 \begin{frame}{Main contributions}
 	\begin{itemize}
-		\item Multisensor fusion approach that relies on color segmentation and voxel grid merging of point clouds that were generated in simulated worlds.
-		\item RANSAC algorithm for estimating the type, number and disposition of 3D sensors that maximize the target objects observable surface area.
-		\item Public release\footnote{\scriptsize\url{https://github.com/carlosmccosta/sensor_placement_optimization}} of source code and dataset with 4 simulation worlds developed for bin picking and active perception use cases with parts with large occlusions.
+		\item Reliable segmentation of the target objects surface 3D points from the simulated worlds modeled in the Gazebo simulator using a special surface material that is not influenced by vertex shading and shadows and has a unique color to identify the target objects surface.
+		\item Multisensor fusion using a voxel grid, which solves the problem of correctly computing the observed surface area coverage of the target objects when:
+		\begin{itemize}
+				\item There is overlap between the point clouds captured from different views.
+				\item The sensors have different resolutions and are placed at varying distances.
+		\end{itemize}
+		\item RANSAC approach for tackling the combinatorial explosive problem of estimating the type, number and disposition of 3D sensors that maximize the target objects observable surface area.
+		\item Public release\footnote{\scriptsize\url{https://github.com/carlosmccosta/sensor_placement_optimization}} of the Gazebo plugin code and dataset with 4 simulation worlds developed for bin picking and active perception use cases.
 	\end{itemize}
 \end{frame}
